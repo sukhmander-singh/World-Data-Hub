@@ -13,6 +13,7 @@ const borderCountries = document.querySelector('.country-border')
 const backBtn = document.querySelector('.back-btn')
 const mode = document.querySelector('.mode')
 const moonIcon = document.querySelector('.mode i')
+const fullBody = document.body
 
 
 backBtn.addEventListener('click', () => {
