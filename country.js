@@ -65,7 +65,7 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}`)
                         const countryTagLinks = document.createElement('a')
                         countryTagLinks.classList.add('country-links') 
                         countryTagLinks.innerText = borderCountryData.name.common
-                        countryTagLinks.href = `http://127.0.0.1:5500/REST%20Countries%20API/country.html?name=${borderCountryData.name.common}`
+                        countryTagLinks.href = `./country.html?name=${borderCountryData.name.common}`
                         borderCountries.append(countryTagLinks)
                     })
             })
