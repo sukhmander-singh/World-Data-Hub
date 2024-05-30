@@ -1,0 +1,110 @@
+.nav-btns {
+    max-width: 1280px;
+    padding: 3rem;
+    margin-inline: auto;
+}
+.back-btn {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    font-size: .8rem;
+    padding: .25rem .75rem;
+    border-radius: 3px;
+    margin-left: .7rem;
+    display: inline-block;
+    font-weight: 400;
+    cursor: pointer;
+    background-color: var(--bgcolor-second);
+}
+
+.country-info-container {
+    width: 100%;
+}
+.country-info-content {
+    max-width: 1280px;
+    padding: 3rem;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+}
+.flag-box {
+    width: 40%;
+    overflow: hidden;
+}
+.flag-box img {
+    width: 100%;
+    border: .5px solid rgba(0, 0, 0, 0.1)
+}
+.country-text-box {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 0 2rem 5rem;
+    gap: 2rem;
+}
+.country-text-box h3 {
+    font-weight: 800;
+    font-size: 1.3rem;
+}
+.country-details {
+    display: flex;
+}
+.country-details .box-left, .country-details .box-right {
+    width: 50%;
+}
+.country-details p {
+    font-size: .8rem;
+}
+.country-border {
+    display: flex;
+    align-items: center;
+}
+.country-border a {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    font-size: .7rem;
+    padding: .25rem .5rem;
+    border-radius: 3px;
+    margin-left: .7rem;
+    background-color: var(--bgcolor-second);
+}
+.country-border p {
+    font-size: .8rem;
+    font-weight: bold;
+}
+@media (max-width: 760px) {
+    .nav-btns{
+        padding-bottom: 0rem;
+    }
+    .country-info-content {
+        flex-direction: column;
+        align-items: start;
+    }
+    .flag-box{
+        width: 100%;
+        max-width: 400px;
+        align-self: center;
+    }
+    .country-text-box{
+        width: 100%;
+        max-width: 500px;
+        margin-inline: auto;
+        padding: 1.5rem 2rem;
+    }
+    .country-details{
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .country-details .box-left, .country-details .box-right {
+        width: 100%;
+    }
+}
+@media (max-width: 425px) {
+    .country-info-content{
+        padding-inline: 1.5rem;
+    }
+    .country-text-box{
+        padding-inline: 0;
+    }
+    .nav-btns {
+        padding-inline: 1.5rem;
+    }
+}

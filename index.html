@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Data Hub</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,regular,500,600,700,800,900" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    
+    <header class="header-container">
+        <div class="header-content">
+            <h1 class="title"><a href="#">Where in the world?</a></h1>
+            <p class="mode"><i class="fa-regular fa-moon"></i><span>&nbsp;&nbsp; Change Mode</span></p>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="search-filter-container">
+            <div class="search-container">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" name="search" id="search" placeholder="Search for a country...">
+            </div>
+
+            <select name="select" class="select" id="select">
+                <option hidden>Search by region</option>
+                <option value="africa">Africa</option>
+                <option value="america">America</option>
+                <option value="asia">Asia</option>
+                <option value="europe">Europe</option>
+                <option value="oceania">Oceania</option>
+            </select>
+        </div>
+
+        <div class="main-container">
+            <div class="main-content">
+                
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>
