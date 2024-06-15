@@ -11,7 +11,7 @@
 
 ## Introduction
 
-This is a practice project where users can get info about all the countries such as flags, native names, languages, population, regions and more. The project is built using HTML, CSS, and JavaScript.
+This is a my practice project where users can get info about all the countries such as flags, native names, languages, population, regions and more. The project is built using HTML, CSS, and JavaScript.
 
 ## Features
 
