@@ -1,8 +1,12 @@
 const mainContent  = document.querySelector('.main-content')
 const mode = document.querySelector('.mode')
-const moonIcon = document.querySelector('.mode i')
+const modeIcon = document.querySelector('.mode i')
+const modeName = document.querySelector('.mode span')
 const selectByRegion = document.querySelector('.select')
 const searchBar = document.querySelector('.search-container input')
+const modeCssFile = document.querySelector('#mode-css-file')
+
+modeCssFile.href = localStorage.getItem('mode')
 
 fetch('https://restcountries.com/v3.1/all')
     .then((res) => res.json())
@@ -57,8 +61,37 @@ searchBar.addEventListener('input', (e) => {
     .then(fetchSearchedCountries)
     })
 
+
+if (!localStorage.getItem('mode name')) {
+    localStorage.setItem('mode name', 'Dark Mode');
+}
+let modeNameVar = localStorage.getItem('mode name');
+modeName.innerText = modeNameVar;
+
+if (!localStorage.getItem('mode icon')) {
+    localStorage.setItem('mode icon', 'fa-moon');
+}
+let modeIconClass = localStorage.getItem('mode icon');
+modeIcon.classList.add(modeIconClass);
+
 mode.addEventListener('click', () => {
-    document.body.classList.toggle('dark')
-    moonIcon.classList.toggle('fa-moon')
-    moonIcon.classList.toggle('fa-sun')
+    let modetext = localStorage.getItem('mode')
+
+    if (modetext === 'dark.css') {
+        localStorage.setItem('mode', 'light.css')
+        modeCssFile.href = 'light.css'
+        localStorage.setItem('mode name', 'Dark Mode')
+        modeName.innerText = localStorage.getItem('mode name')
+        modeIcon.classList.remove(localStorage.getItem('mode icon'))
+        localStorage.setItem('mode icon', 'fa-moon')
+        modeIcon.classList.add(localStorage.getItem('mode icon'))
+    } else {
+        localStorage.setItem('mode', 'dark.css')
+        modeCssFile.href = 'dark.css'
+        localStorage.setItem('mode name', 'Light Mode')
+        modeName.innerText = localStorage.getItem('mode name')
+        modeIcon.classList.remove(localStorage.getItem('mode icon'))
+        localStorage.setItem('mode icon', 'fa-sun')
+        modeIcon.classList.add(localStorage.getItem('mode icon'))
+    }
  })

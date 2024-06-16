@@ -6,21 +6,11 @@
     font-family: 'Nunito Sans';
 }
 body {
-    --text-color: #000;
-    --text-color-second: #2e2e2e;
-    --bgcolor: #fff;
-    --bgcolor-second: #fff;
     width: 100%;
     height: 100%;
     background-color: var(--bgcolor);
     color: var(--text-color);
 
-}
-body.dark {
-    --text-color: #fff;
-    --text-color-second: #f0f0f0;
-    --bgcolor: #1c1b1b;
-    --bgcolor-second: #393939;
 }
 a {
     text-decoration-line: none;
@@ -50,6 +40,9 @@ a {
     font-weight: 500;
     font-size: 1rem;
     cursor: pointer;
+}
+.header-container .mode span {
+    margin-left: 1rem;
 }
 .header-content .mode i{
     font-size: 1.3rem;

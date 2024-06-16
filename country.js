@@ -12,8 +12,12 @@ const languages = document.querySelector('.languages')
 const borderCountries = document.querySelector('.country-border')
 const backBtn = document.querySelector('.back-btn')
 const mode = document.querySelector('.mode')
-const moonIcon = document.querySelector('.mode i')
+const modeIcon = document.querySelector('.mode i')
 const fullBody = document.body
+const modeCssFile = document.querySelector('#mode-css-file')
+const modeName = document.querySelector('.mode span')
+
+modeCssFile.href = localStorage.getItem('mode')
 
 
 backBtn.addEventListener('click', () => {
@@ -73,8 +77,37 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}`)
         }
     })
 
-mode.addEventListener('click', () => {
-        document.body.classList.toggle('dark')
-        moonIcon.classList.toggle('fa-moon')
-        moonIcon.classList.toggle('fa-sun')
+    if (!localStorage.getItem('mode name')) {
+        localStorage.setItem('mode name', 'Dark Mode');
+    }
+    let modeNameVar = localStorage.getItem('mode name');
+    modeName.innerText = modeNameVar;
+    
+    if (!localStorage.getItem('mode icon')) {
+        localStorage.setItem('mode icon', 'fa-moon');
+    }
+    let modeIconClass = localStorage.getItem('mode icon');
+    modeIcon.classList.remove('fa-moon')
+    modeIcon.classList.add(modeIconClass);
+    
+    mode.addEventListener('click', () => {
+        let modetext = localStorage.getItem('mode')
+    
+        if (modetext === 'dark.css') {
+            localStorage.setItem('mode', 'light.css')
+            modeCssFile.href = 'light.css'
+            localStorage.setItem('mode name', 'Dark Mode')
+            modeName.innerText = localStorage.getItem('mode name')
+            modeIcon.classList.remove(localStorage.getItem('mode icon'))
+            localStorage.setItem('mode icon', 'fa-moon')
+            modeIcon.classList.add(localStorage.getItem('mode icon'))
+        } else {
+            localStorage.setItem('mode', 'dark.css')
+            modeCssFile.href = 'dark.css'
+            localStorage.setItem('mode name', 'Light Mode')
+            modeName.innerText = localStorage.getItem('mode name')
+            modeIcon.classList.remove(localStorage.getItem('mode icon'))
+            localStorage.setItem('mode icon', 'fa-sun')
+            modeIcon.classList.add(localStorage.getItem('mode icon'))
+        }
      })
